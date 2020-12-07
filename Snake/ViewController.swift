@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let a : Float = 0.0;
         // Do any additional setup after loading the view.
     }
 
