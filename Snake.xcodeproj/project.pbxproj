@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10416FB62584C2D100F8FBD5 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10416FB52584C2D100F8FBD5 /* BoardView.swift */; };
 		10431203257E8DCD005FC073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10431202257E8DCD005FC073 /* AppDelegate.swift */; };
 		10431205257E8DCD005FC073 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10431204257E8DCD005FC073 /* SceneDelegate.swift */; };
 		10431207257E8DCD005FC073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10431206257E8DCD005FC073 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10416FB52584C2D100F8FBD5 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		104311FF257E8DCD005FC073 /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10431202257E8DCD005FC073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10431204257E8DCD005FC073 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10416FB72584C31B00F8FBD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10416FB82584C34900F8FBD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10431208257E8DCD005FC073 /* Main.storyboard */,
+				10431210257E8DD0005FC073 /* LaunchScreen.storyboard */,
+				10416FB52584C2D100F8FBD5 /* BoardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10416FB92584C36500F8FBD5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10431206257E8DCD005FC073 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		104311F6257E8DCD005FC073 = {
 			isa = PBXGroup;
 			children = (
@@ -101,12 +128,12 @@
 		10431201257E8DCD005FC073 /* Snake */ = {
 			isa = PBXGroup;
 			children = (
+				10416FB72584C31B00F8FBD5 /* Model */,
+				10416FB82584C34900F8FBD5 /* View */,
+				10416FB92584C36500F8FBD5 /* Controller */,
 				10431202257E8DCD005FC073 /* AppDelegate.swift */,
 				10431204257E8DCD005FC073 /* SceneDelegate.swift */,
-				10431206257E8DCD005FC073 /* ViewController.swift */,
-				10431208257E8DCD005FC073 /* Main.storyboard */,
 				1043120E257E8DD0005FC073 /* Assets.xcassets */,
-				10431210257E8DD0005FC073 /* LaunchScreen.storyboard */,
 				10431213257E8DD0005FC073 /* Info.plist */,
 				1043120B257E8DCD005FC073 /* Snake.xcdatamodeld */,
 			);
@@ -264,6 +291,7 @@
 			files = (
 				1043120D257E8DCD005FC073 /* Snake.xcdatamodeld in Sources */,
 				10431207257E8DCD005FC073 /* ViewController.swift in Sources */,
+				10416FB62584C2D100F8FBD5 /* BoardView.swift in Sources */,
 				10431203257E8DCD005FC073 /* AppDelegate.swift in Sources */,
 				10431205257E8DCD005FC073 /* SceneDelegate.swift in Sources */,
 			);
