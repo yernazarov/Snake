@@ -10,8 +10,6 @@ import UIKit
 
 class BoardView: UIView {
     
-    let columns: Int = 15
-    let rows: Int = 15
     
     let originX: CGFloat = 30
     let originY: CGFloat = 30
@@ -22,13 +20,13 @@ class BoardView: UIView {
     }
     func drawGrid(){
         let gridPath = UIBezierPath()
-        for i in 0...rows{
+        for i in 0...SnakeBoard.rows{
             gridPath.move(to: CGPoint(x: originX, y: originY+CGFloat(i)*cellSide));
-            gridPath.addLine(to: CGPoint(x: originX+CGFloat(columns)*cellSide, y: originY+CGFloat(i)*cellSide));
+            gridPath.addLine(to: CGPoint(x: originX+CGFloat(SnakeBoard.columns)*cellSide, y: originY+CGFloat(i)*cellSide));
         }
-        for j in 0...columns{
+        for j in 0...SnakeBoard.columns{
             gridPath.move(to: CGPoint(x: originX+CGFloat(j)*cellSide, y: originY));
-            gridPath.addLine(to: CGPoint(x: originX+CGFloat(j)*cellSide, y: originY+CGFloat(rows)*cellSide));
+            gridPath.addLine(to: CGPoint(x: originX+CGFloat(j)*cellSide, y: originY+CGFloat(SnakeBoard.rows)*cellSide));
         }
         
         UIColor.green.setStroke();

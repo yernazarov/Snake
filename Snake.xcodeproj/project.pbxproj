@@ -15,8 +15,9 @@
 		1043120D257E8DCD005FC073 /* Snake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1043120B257E8DCD005FC073 /* Snake.xcdatamodeld */; };
 		1043120F257E8DD0005FC073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1043120E257E8DD0005FC073 /* Assets.xcassets */; };
 		10431212257E8DD0005FC073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10431210257E8DD0005FC073 /* LaunchScreen.storyboard */; };
-		1043121D257E8DD0005FC073 /* SnakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1043121C257E8DD0005FC073 /* SnakeTests.swift */; };
 		10431228257E8DD0005FC073 /* SnakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10431227257E8DD0005FC073 /* SnakeUITests.swift */; };
+		10662895258A201700F333CB /* SnakeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10662894258A201700F333CB /* SnakeBoard.swift */; };
+		10662897258A21F000F333CB /* SnakeBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10662896258A21F000F333CB /* SnakeBoardTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +49,12 @@
 		10431211257E8DD0005FC073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10431213257E8DD0005FC073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10431218257E8DD0005FC073 /* SnakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1043121C257E8DD0005FC073 /* SnakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeTests.swift; sourceTree = "<group>"; };
 		1043121E257E8DD0005FC073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10431223257E8DD0005FC073 /* SnakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10431227257E8DD0005FC073 /* SnakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeUITests.swift; sourceTree = "<group>"; };
 		10431229257E8DD0005FC073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10662894258A201700F333CB /* SnakeBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeBoard.swift; sourceTree = "<group>"; };
+		10662896258A21F000F333CB /* SnakeBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeBoardTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				10431206257E8DCD005FC073 /* ViewController.swift */,
+				10662894258A201700F333CB /* SnakeBoard.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,8 +146,8 @@
 		1043121B257E8DD0005FC073 /* SnakeTests */ = {
 			isa = PBXGroup;
 			children = (
-				1043121C257E8DD0005FC073 /* SnakeTests.swift */,
 				1043121E257E8DD0005FC073 /* Info.plist */,
+				10662896258A21F000F333CB /* SnakeBoardTests.swift */,
 			);
 			path = SnakeTests;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 					};
 					10431217257E8DD0005FC073 = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
 						TestTargetID = 104311FE257E8DCD005FC073;
 					};
 					10431222257E8DD0005FC073 = {
@@ -292,6 +296,7 @@
 				1043120D257E8DCD005FC073 /* Snake.xcdatamodeld in Sources */,
 				10431207257E8DCD005FC073 /* ViewController.swift in Sources */,
 				10416FB62584C2D100F8FBD5 /* BoardView.swift in Sources */,
+				10662895258A201700F333CB /* SnakeBoard.swift in Sources */,
 				10431203257E8DCD005FC073 /* AppDelegate.swift in Sources */,
 				10431205257E8DCD005FC073 /* SceneDelegate.swift in Sources */,
 			);
@@ -301,7 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1043121D257E8DD0005FC073 /* SnakeTests.swift in Sources */,
+				10662897258A21F000F333CB /* SnakeBoardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +508,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SnakeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
@@ -513,6 +519,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yernazarov.SnakeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Snake.app/Snake";
@@ -524,6 +531,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SnakeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
