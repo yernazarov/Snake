@@ -12,8 +12,12 @@ import XCTest
 class SnakeBoardTests: XCTestCase {
     
     func testPrintingBoard() {
-        let Board = SnakeBoard()
-        print(Board)
+        var board = SnakeBoard()
+        board.snake.append(SnakeCell(row: 3, column: 4))
+        board.snake.append(SnakeCell(row: 4, column: 4))
+        board.snake.append(SnakeCell(row: 5, column: 4))
+        board.snake.append(SnakeCell(row: 3, column: 5))
+        print(board)
     }
 
 }

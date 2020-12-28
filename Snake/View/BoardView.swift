@@ -14,10 +14,24 @@ class BoardView: UIView {
     let originX: CGFloat = 30
     let originY: CGFloat = 30
     let cellSide: CGFloat = 18
+    var board = SnakeBoard()//temp code
     override func draw(_ rect: CGRect) {
         // Drawing code
+        
+        board.snake.append(SnakeCell(row: 3, column: 4))
+        board.snake.append(SnakeCell(row: 4, column: 4))
+        board.snake.append(SnakeCell(row: 5, column: 4))
+        board.snake.append(SnakeCell(row: 3, column: 5))
         drawGrid();
+        drawSnake();
     }
+    
+    func drawSnake(){
+        UIColor.green.setFill()
+        let cell = UIBezierPath(roundedRect: CGRect(x: originX, y: originY, width: cellSide, height: cellSide), cornerRadius: 10)
+        cell.fill()
+    }
+    
     func drawGrid(){
         let gridPath = UIBezierPath()
         for i in 0...SnakeBoard.rows{
