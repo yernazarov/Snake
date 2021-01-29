@@ -18,18 +18,32 @@ class BoardView: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         
+        board.snake.append(SnakeCell(row: 3, column: 5))
         board.snake.append(SnakeCell(row: 3, column: 4))
         board.snake.append(SnakeCell(row: 4, column: 4))
         board.snake.append(SnakeCell(row: 5, column: 4))
-        board.snake.append(SnakeCell(row: 3, column: 5))
         drawGrid();
         drawSnake();
     }
     
     func drawSnake(){
+        
+        if board.snake.isEmpty {
+            return
+        }
+// another way  of writing the same
+//        guard !board.snake.isEmpty else {
+//            return
+//        }
+        
+        let snakeHead = board.snake.first!
+        UIColor.red.setFill()
+        UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(snakeHead.column) * cellSide, y: originY + CGFloat(snakeHead.row) * cellSide, width: cellSide, height: cellSide), cornerRadius: 10).fill()
         UIColor.green.setFill()
-        let cell = UIBezierPath(roundedRect: CGRect(x: originX, y: originY, width: cellSide, height: cellSide), cornerRadius: 10)
-        cell.fill()
+        for i in 1..<board.snake.count {
+            let cell = board.snake[i]
+            UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(cell.column) * cellSide, y: originY + CGFloat(cell.row) * cellSide, width: cellSide, height: cellSide), cornerRadius: 10).fill()
+        }
     }
     
     func drawGrid(){
