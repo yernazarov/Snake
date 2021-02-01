@@ -18,7 +18,8 @@ class SnakeBoardTests: XCTestCase {
         board.snake.append(SnakeCell(row: 4, column: 4))
         board.snake.append(SnakeCell(row: 5, column: 4))
         print(board)
-        
+        board.moveLeft()
+        board.moveLeft()
+        print(board )
     }
-
 }

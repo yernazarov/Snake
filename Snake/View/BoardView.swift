@@ -22,6 +22,11 @@ class BoardView: UIView {
         board.snake.append(SnakeCell(row: 3, column: 4))
         board.snake.append(SnakeCell(row: 4, column: 4))
         board.snake.append(SnakeCell(row: 5, column: 4))
+        board.moveLeft()
+        board.moveLeft()
+        board.moveDown()
+        board.moveDown()
+        board.moveDown()
         drawGrid();
         drawSnake();
     }
