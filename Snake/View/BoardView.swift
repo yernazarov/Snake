@@ -27,6 +27,7 @@ class BoardView: UIView {
         board.moveDown()
         board.moveDown()
         board.moveDown()
+        board.moveRight()
         drawGrid();
         drawSnake();
     }
