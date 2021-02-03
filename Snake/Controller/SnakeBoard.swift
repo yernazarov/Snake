@@ -11,8 +11,8 @@ import Foundation
 
 
 struct SnakeBoard: CustomStringConvertible {
-    static let columns: Int = 10
-    static let rows: Int = 10
+    static let columns: Int = 16
+    static let rows: Int = 16
     
     var snake: [SnakeCell] = []
     
@@ -45,7 +45,6 @@ struct SnakeBoard: CustomStringConvertible {
         }
         return false
     }
-    
     var description: String {
         var desc = ""
         desc+=" "

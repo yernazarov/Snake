@@ -11,30 +11,19 @@ import UIKit
 class BoardView: UIView {
     
     
-    let originX: CGFloat = 30
-    let originY: CGFloat = 30
+    let originX: CGFloat = 25
+    let originY: CGFloat = 25
     let cellSide: CGFloat = 18
-    var board = SnakeBoard()//temp code
+    var shadowSnake: [SnakeCell] = []
     override func draw(_ rect: CGRect) {
         // Drawing code
-        
-        board.snake.append(SnakeCell(row: 3, column: 5))
-        board.snake.append(SnakeCell(row: 3, column: 4))
-        board.snake.append(SnakeCell(row: 4, column: 4))
-        board.snake.append(SnakeCell(row: 5, column: 4))
-        board.moveLeft()
-        board.moveLeft()
-        board.moveDown()
-        board.moveDown()
-        board.moveDown()
-        board.moveRight()
         drawGrid();
         drawSnake();
     }
     
     func drawSnake(){
         
-        if board.snake.isEmpty {
+        if shadowSnake.isEmpty {
             return
         }
 // another way  of writing the same
@@ -42,12 +31,12 @@ class BoardView: UIView {
 //            return
 //        }
         
-        let snakeHead = board.snake.first!
+        let snakeHead = shadowSnake.first!
         UIColor.red.setFill()
         UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(snakeHead.column) * cellSide, y: originY + CGFloat(snakeHead.row) * cellSide, width: cellSide, height: cellSide), cornerRadius: 10).fill()
         UIColor.green.setFill()
-        for i in 1..<board.snake.count {
-            let cell = board.snake[i]
+        for i in 1..<shadowSnake.count {
+            let cell = shadowSnake[i]
             UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(cell.column) * cellSide, y: originY + CGFloat(cell.row) * cellSide, width: cellSide, height: cellSide), cornerRadius: 10).fill()
         }
     }
