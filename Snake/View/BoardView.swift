@@ -15,12 +15,18 @@ class BoardView: UIView {
     let originY: CGFloat = 25
     let cellSide: CGFloat = 18
     var shadowSnake: [SnakeCell] = []
+    var shadowfruitCol: Int = Int.min
+    var shadowfruitRow: Int = Int.min
     override func draw(_ rect: CGRect) {
         // Drawing code
         drawGrid();
         drawSnake();
+        drawFruit();
     }
-    
+    func drawFruit(){
+        UIColor.blue.setFill()
+        UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(shadowfruitCol) * cellSide, y: originY + CGFloat(shadowfruitRow) * cellSide, width: cellSide, height: cellSide), cornerRadius: 10).fill()
+    }
     func drawSnake(){
         
         if shadowSnake.isEmpty {

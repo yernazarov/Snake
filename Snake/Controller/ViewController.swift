@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         board.snake.append(SnakeCell(row: 5, column: 4))
         boardView.shadowSnake = board.snake
         // Do any additional setup after loading the view.
+        boardView.shadowfruitCol = board.fruitCol
+        boardView.shadowfruitRow = board.fruitRow
     }
 
     @IBAction func up(_ sender: Any) {

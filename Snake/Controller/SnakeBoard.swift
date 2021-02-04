@@ -14,6 +14,9 @@ struct SnakeBoard: CustomStringConvertible {
     static let columns: Int = 16
     static let rows: Int = 16
     
+    let fruitCol: Int = 2
+    let fruitRow: Int = 1
+    
     var snake: [SnakeCell] = []
     
     mutating func moveLeft(){
