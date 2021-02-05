@@ -20,7 +20,9 @@ struct SnakeBoard: CustomStringConvertible {
     var snake: [SnakeCell] = []
     
     mutating func moveLeft(){
+        
         snake = updateSnake(newHead: SnakeCell(row: snake[0].row, column: snake[0].column-1))
+        
     }
     mutating func moveRight(){
         snake = updateSnake(newHead: SnakeCell(row: snake[0].row, column: snake[0].column+1))
@@ -36,6 +38,9 @@ struct SnakeBoard: CustomStringConvertible {
         newSnake.append(newHead)
         for i in 0..<snake.count-1 {
             newSnake.append(snake[i])
+        };let oldTail = snake[snake.count-1]
+        if snake[0].column==fruitCol && snake[0].row==fruitRow {
+            newSnake.append(oldTail)
         }
         return newSnake
     }
