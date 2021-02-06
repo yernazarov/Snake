@@ -14,26 +14,28 @@ struct SnakeBoard: CustomStringConvertible {
     static let columns: Int = 16
     static let rows: Int = 16
     
-    let fruitCol: Int = 2
-    let fruitRow: Int = 1
+    var fruitCol: Int = 2
+    var fruitRow: Int = 1
     
     var snake: [SnakeCell] = []
+    mutating func randomizeFruit(){
+        fruitCol = Int(arc4random()) % SnakeBoard.columns
+        fruitRow = Int(arc4random()) % SnakeBoard.rows
+    }
     
     mutating func moveLeft(){
-        
-        snake = updateSnake(newHead: SnakeCell(row: snake[0].row, column: snake[0].column-1))
-        
+        updateSnakeAndFruit(newHead: SnakeCell(row: snake[0].row, column: snake[0].column-1))
     }
     mutating func moveRight(){
-        snake = updateSnake(newHead: SnakeCell(row: snake[0].row, column: snake[0].column+1))
+        updateSnakeAndFruit(newHead: SnakeCell(row: snake[0].row, column: snake[0].column+1))
     }
     mutating func moveUp(){
-        snake = updateSnake(newHead: SnakeCell(row: snake[0].row-1, column: snake[0].column))
+        updateSnakeAndFruit(newHead: SnakeCell(row: snake[0].row-1, column: snake[0].column))
     }
     mutating func moveDown(){
-        snake = updateSnake(newHead: SnakeCell(row: snake[0].row+1, column: snake[0].column))
+        updateSnakeAndFruit(newHead: SnakeCell(row: snake[0].row+1, column: snake[0].column))
     }
-    func updateSnake(newHead: SnakeCell) -> [SnakeCell] {
+    mutating func updateSnakeAndFruit(newHead: SnakeCell){
         var newSnake: [SnakeCell] = []
         newSnake.append(newHead)
         for i in 0..<snake.count-1 {
@@ -41,8 +43,8 @@ struct SnakeBoard: CustomStringConvertible {
         };let oldTail = snake[snake.count-1]
         if snake[0].column==fruitCol && snake[0].row==fruitRow {
             newSnake.append(oldTail)
-        }
-        return newSnake
+            randomizeFruit()
+        };snake = newSnake;
     }
     
     func isOnSnake(col: Int, row: Int) -> Bool {

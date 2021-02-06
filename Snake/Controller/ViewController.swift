@@ -18,30 +18,29 @@ class ViewController: UIViewController {
         board.snake.append(SnakeCell(row: 3, column: 4))
         board.snake.append(SnakeCell(row: 4, column: 4))
         board.snake.append(SnakeCell(row: 5, column: 4))
-        boardView.shadowSnake = board.snake
-        // Do any additional setup after loading the view.
-        boardView.shadowfruitCol = board.fruitCol
-        boardView.shadowfruitRow = board.fruitRow
+        updateUI()
     }
 
     @IBAction func up(_ sender: Any) {
         board.moveUp()
-        boardView.shadowSnake = board.snake
-        boardView.setNeedsDisplay()
+        updateUI()
     }
     @IBAction func left(_ sender: Any) {
         board.moveLeft()
-        boardView.shadowSnake = board.snake
-        boardView.setNeedsDisplay()
+        updateUI()
     }
     @IBAction func right(_ sender: Any) {
         board.moveRight()
-        boardView.shadowSnake = board.snake
-        boardView.setNeedsDisplay()
+        updateUI()
     }
     @IBAction func down(_ sender: Any) {
         board.moveDown()
+        updateUI()
+    }
+    private func updateUI(){
         boardView.shadowSnake = board.snake
+        boardView.shadowfruitCol = board.fruitCol
+        boardView.shadowfruitRow = board.fruitRow
         boardView.setNeedsDisplay()
     }
     
