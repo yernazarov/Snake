@@ -21,7 +21,12 @@ struct SnakeBoard: CustomStringConvertible {
     mutating func randomizeFruit(){
         fruitCol = Int(arc4random()) % SnakeBoard.columns
         fruitRow = Int(arc4random()) % SnakeBoard.rows
+        while isOnSnake(col: fruitCol, row: fruitRow){
+            fruitCol = Int(arc4random()) % SnakeBoard.columns
+            fruitRow = Int(arc4random()) % SnakeBoard.rows
+        }
     }
+    
     
     mutating func moveLeft(){
         updateSnakeAndFruit(newHead: SnakeCell(row: snake[0].row, column: snake[0].column-1))

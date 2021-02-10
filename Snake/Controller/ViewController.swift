@@ -19,6 +19,10 @@ class ViewController: UIViewController {
         board.snake.append(SnakeCell(row: 4, column: 4))
         board.snake.append(SnakeCell(row: 5, column: 4))
         updateUI()
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
+            self.board.moveUp()
+            self.updateUI()
+        }
     }
 
     @IBAction func up(_ sender: Any) {
