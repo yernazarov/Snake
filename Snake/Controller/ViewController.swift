@@ -35,6 +35,27 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func tapped(_ sender: UITapGestureRecognizer) {
+        let finger = sender.location(in: boardView)
+        let snakeHead : SnakeCell = board.snake[0]
+        let snakeHeadCenterX: CGFloat = boardView.originX + (CGFloat(snakeHead.column)+0.5)*boardView.cellSide
+        let snakeHeadCenterY: CGFloat = boardView.originY + (CGFloat(snakeHead.row)+0.5)*boardView.cellSide
+        switch direction {
+        case .left, .right:
+            if finger.y > snakeHeadCenterY{
+                direction = .down
+            }else{
+                direction = .up
+            }
+        case .up, .down:
+            if finger.x > snakeHeadCenterX{
+                direction = .right
+            }else{
+                direction = .left
+            }
+        }
+    }
+    
     @IBAction func up(_ sender: Any) {
         direction = .up
     }
